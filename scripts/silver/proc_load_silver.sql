@@ -146,7 +146,7 @@ BEGIN
     SELECT
         sls_ord_num,
         sls_prd_key,
-        sls_cust_id,
+        sls_cust_id::INTEGER,
         CASE
             WHEN sls_order_dt = 0 OR LENGTH(sls_order_dt::TEXT) <> 8 THEN NULL
             ELSE TO_DATE(sls_order_dt::TEXT, 'YYYYMMDD')
